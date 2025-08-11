@@ -9,10 +9,9 @@ Build a small realistic application using .Net 9 and Angular 16
 ---
 
 ## How to Run the Application with Docker
-
+```bash
 ### 1. Clone the Repository
 
-```bash
 git clone https://github.com/El-Makhroubi-Mohammed/BugTracker.git
 cd BugTracker
 
