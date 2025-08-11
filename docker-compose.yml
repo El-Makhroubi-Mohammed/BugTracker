@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: bugtracker-db
+    environment:
+      SA_PASSWORD: "YourStrong(!)Password"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+  api:
+    build:
+      context: ./backend/BugTracker
+      dockerfile: BugTracker.API/Dockerfile
+    container_name: bugtracker-api
+    depends_on:
+      - sqlserver
+    environment:
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=BugTrackerDb;User Id=sa;Password=YourStrong(!)Password;TrustServerCertificate=True;"
+    ports:
+      - "5000:8080" # match your API's exposed port in Dockerfile
+
+  frontend:
+    build:
+      context: ./frontend/BugTracker.UI
+      dockerfile: Dockerfile
+    container_name: bugtracker-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
+
+volumes:
+  sqlserver_data:

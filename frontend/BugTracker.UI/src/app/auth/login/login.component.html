@@ -1,0 +1,126 @@
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="login-form">
+  <h2>Login</h2>
+
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input
+      id="username"
+      name="username"
+      type="text"
+      required
+      [(ngModel)]="loginData.username"
+      #username="ngModel"
+      [class.invalid]="username.invalid && username.touched"
+      placeholder="Enter your username"
+    />
+    <div *ngIf="username.invalid && username.touched" class="error-msg">
+      Username is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      id="password"
+      name="password"
+      type="password"
+      required
+      [(ngModel)]="loginData.password"
+      #password="ngModel"
+      [class.invalid]="password.invalid && password.touched"
+      placeholder="Enter your password"
+    />
+    <div *ngIf="password.invalid && password.touched" class="error-msg">
+      Password is required
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="loginForm.invalid" class="btn-login">
+    Login
+  </button>
+
+  <div *ngIf="errorMessage" class="error-msg form-error">
+    {{ errorMessage }}
+  </div>
+</form>
+
+<style>
+  .login-form {
+    max-width: 360px;
+    margin: 3rem auto;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    border-radius: 12px;
+    background: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .login-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #222;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #444;
+  }
+
+  input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    outline-offset: 2px;
+  }
+
+  input:focus {
+    border-color: #5b8def;
+    box-shadow: 0 0 6px #5b8def66;
+  }
+
+  input.invalid {
+    border-color: #e55353;
+  }
+
+  .error-msg {
+    margin-top: 0.4rem;
+    color: #e55353;
+    font-size: 0.85rem;
+  }
+
+  .form-error {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .btn-login {
+    width: 100%;
+    padding: 0.9rem 0;
+    background-color: #5b8def;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+  }
+
+  .btn-login:disabled {
+    background-color: #a3bffa;
+    cursor: not-allowed;
+  }
+
+  .btn-login:not(:disabled):hover {
+    background-color: #4a73d1;
+  }
+</style>

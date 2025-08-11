@@ -1,0 +1,69 @@
+<h2 class="projects-title">Your Projects</h2>
+
+<ul class="projects-list">
+  <li *ngFor="let project of projects" class="project-card">
+    <span class="project-name">{{ project.name }}</span>
+    <button class="btn-view-bugs" (click)="viewBugs(project.id)">View Bugs</button>
+  </li>
+</ul>
+
+<style>
+  .projects-title {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  .projects-list {
+    list-style: none;
+    padding: 0;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 6px 20px rgb(0 0 0 / 0.15);
+  }
+
+  .project-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .btn-view-bugs {
+    background-color: #5b8def;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.25s ease;
+  }
+
+  .btn-view-bugs:hover {
+    background-color: #4a73d1;
+  }
+
+  .btn-view-bugs:focus {
+    outline: 2px solid #2f5ecc;
+    outline-offset: 2px;
+  }
+</style>

@@ -1,0 +1,101 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider
+.idea/
+
+# ASP.NET Core
+wwwroot/
+*.db
+
+# Logs
+*.log
+logs/
+
+# User-specific files
+*.rsuser
+*.dotCover
+
+# Coverage results
+coverage/
+*.coverage
+*.coveragexml
+
+# Publish output
+publish/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/packages/
+packages/
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# StyleCop
+StyleCopReport.xml
+
+# Azure Functions
+local.settings.json
+
+# Docker
+docker-compose.override.yml
+docker-compose.override.*.yml
+
+# ASP.NET Temporary files
+App_Data/
+
+# Test result files
+TestResults/
+*.trx
+*.testsettings
+*.vsmdi
+
+# IIS Express
+/.vs/
+IISExpress/
+
+# Others
+*.dbmdl
+*.bak
+*.sql
+*.pdb
+
+# Environment files
+.env
+.env.*
+
+# JetBrains Rider
+.idea/
+
+# NPM packages if you have front-end
+node_modules/
+
+# VS Code
+.vscode/
+
+# DotCover
+*.dotCover
+
+# Publish folder (if you publish inside repo)
+publish/
+
+# Others you might add for clean arch:
+# If you have migration files that you don't want tracked, add them here
+
