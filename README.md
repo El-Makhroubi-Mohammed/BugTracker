@@ -17,12 +17,10 @@ cd BugTracker
 
 ### 2. Start the application:
 
-bash
-docker compose up --build
-To run in detached mode (in the background):
+Run the following command to build the Docker image(s) and start the container(s):
 
-bash
-docker-compose up -d
+docker compose up --build
+
 ### 3. Access the application:
 
 The application should now be running at http://localhost:4200
@@ -31,6 +29,6 @@ You can then access the backend API at http://localhost:5000/swagger
 
 ### 4. To stop the application:
 
-bash
-docker-compose down
+docker compose down
+
 
